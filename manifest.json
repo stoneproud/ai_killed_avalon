@@ -53,6 +53,11 @@
       "sha256": "29a0d778c83abb5b346351888c31dadcf500d4f0b7bc7f1fc72c858af75b80f9"
     },
     {
+      "path": "PUBLICATION_CHECK.md",
+      "bytes": 1447,
+      "sha256": "b08791a2c70dc5dabf8daca7a6c55585e0483bf30a7282c16afb9e11ca6a0e9b"
+    },
+    {
       "path": "README.md",
       "bytes": 10563,
       "sha256": "ae846bdb95be23245e9750c72689990b5f04dc066103a0592fd03e9fce0f3159"
