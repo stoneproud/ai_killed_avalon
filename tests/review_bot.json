@@ -1,0 +1,11 @@
+{
+  "review":"independent deterministic adapter review",
+  "implementation_modified":false,
+  "model_calls":0,
+  "old_room_reads":false,
+  "blocking_findings":[],
+  "verified_chain":["p5 fixed first-window attribution", "snapshot-bound blob SHA256 and size", "p6 public guard", "p4 sender signature verification", "seat-only private-key decryption", "p4 commitment-opening check", "p1 private selection", "p3 initial/p2 recovery public computation"],
+  "new_dynamic_checks": {"fixed_historical_read":true, "new_blob_hash_tamper_omitted":true, "occupied_valid_own_slot_rejected":true, "invalid_existing_slot_own_supplement_demonstrated":true, "fixture":"synthetic new temporary Git room without keys"},
+  "hardening_findings":[{"priority":"P2", "function":"Bot.reports", "issue":"own helper checks only valid-result occupancy rather than absence of any first-slot event and does not itself enforce leader-last context", "production_reachable":false}],
+  "limitations":["ProtocolError requires operator/human/external-AI takeover for invalid premises; deterministic ordinary-game fallback is not implemented", "Container runtime not exercised", "No new forged-signature end-to-end fixture; signature chain inspected", "Existing expensive complete-game tests were inspected rather than repeated"]
+}

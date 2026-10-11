@@ -1,0 +1,7 @@
+work/
+runs/
+test-results/
+__pycache__/
+**/__pycache__/
+*.pyc
+.git/

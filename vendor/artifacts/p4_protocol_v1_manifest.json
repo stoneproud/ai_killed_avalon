@@ -1,0 +1,170 @@
+{
+   "checksum_file" : "artifacts/p4_protocol_v1.sha256",
+   "direction" : "clockwise",
+   "document" : {
+      "path" : "artifacts/p4_protocol_v1.md",
+      "sha256" : "3b82646c1b672f42500b739a43ed7d7f44be0000f43a41427a6a512124548ba1"
+   },
+   "first_slot_indexer" : "tools/sealed_v1/p5_first_window_v1.pl",
+   "first_slot_policy" : "first host event in the specified window, before content validation; invalid or absent content cannot be replaced",
+   "fixed_broadcast" : "按密封信两圈冻结版v1提交本阶段材料，并按公共状态行动。",
+   "formal_paths" : {
+      "offer" : "artifacts/g2_offer_p{seat}.json",
+      "receipt" : "artifacts/g2_receipt_p{seat}.json",
+      "x_choice" : "artifacts/g2_x_choice_q{quest}_p{seat}.json",
+      "x_source" : "artifacts/g2_x_source_q{quest}_p{seat}.json"
+   },
+   "game" : "g2",
+   "initial_placeholder_team" : [
+      1,
+      2,
+      3
+   ],
+   "invalid_public_schema" : "discard the whole object before passing it to planning tools",
+   "phase_windows" : {
+      "offer" : "g2_q1_proposal1_speech_",
+      "receipt" : "g2_q1_proposal2_speech_",
+      "x_choice" : "g2_q{quest}_proposal2_speech_",
+      "x_source" : "g2_q{quest}_proposal1_speech_"
+   },
+   "protocol" : "sealed-mail-2r-v1",
+   "public_schema_guard" : "tools/sealed_v1/p6_public_guard_v1.pl",
+   "registered_key_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146",
+   "registered_public_keys" : [
+      {
+         "path" : "public/access/p1.pub",
+         "seat" : 1,
+         "sha256" : "85d8ba98a5dae75649d4168608d42d1607d99be9b738f37d2e4d194746fa05cf"
+      },
+      {
+         "path" : "public/access/p2.pub",
+         "seat" : 2,
+         "sha256" : "7745bda680322ea215ea159efbf1785205a343fd35dffb5a2a1950e949970b64"
+      },
+      {
+         "path" : "public/access/p3.pub",
+         "seat" : 3,
+         "sha256" : "f3fa29a568d6cca6d089bc220ca59cf21a7fcb9f70b827a459a724ad46521b8f"
+      },
+      {
+         "path" : "public/access/p4.pub",
+         "seat" : 4,
+         "sha256" : "6dc5974b4bf8e7524700e11fb0558f3ba02bdbb14a7e7b7dafdaa93481bb1a06"
+      },
+      {
+         "path" : "public/access/p5.pub",
+         "seat" : 5,
+         "sha256" : "d80884746e616ac4d1a3df2e7a3c479c129c3d3d099076568ff3979827d17ec6"
+      },
+      {
+         "path" : "public/access/p6.pub",
+         "seat" : 6,
+         "sha256" : "f59e88051cded2043a463e18351e76ccdec1003b14f4fa0075ceeb846282f40f"
+      },
+      {
+         "path" : "public/access/p7.pub",
+         "seat" : 7,
+         "sha256" : "342b95f2f34ec75e0072eddf38f4f059054a9f5844241a0e1ec2c927bac57fe6"
+      },
+      {
+         "path" : "public/access/p8.pub",
+         "seat" : 8,
+         "sha256" : "43b559b3ffa3b40f2b083be8fc45880c97da90d9f045c91d53dedd18b16849a1"
+      }
+   ],
+   "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146",
+   "status" : "pre-deal protocol specification; no role, formal commitment or offer generated",
+   "tools" : [
+      {
+         "author_seat" : 1,
+         "bytes" : 5211,
+         "path" : "tools/sealed_v1/p1_selection_v1.pl",
+         "sha256" : "3e10bf13754d737aa77550cce6937a2e06af32c986ac80c3fb677366e8edbfa8",
+         "source_commit" : "d909de5b74d68665b2bdb1ce9add39371640a6b2",
+         "source_public_path" : "public/files/p1/tools/p1_selection_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 2,
+         "bytes" : 8685,
+         "path" : "tools/sealed_v1/p2_recovery_v1.pl",
+         "sha256" : "16c64d2b361eecc0108e40a581ea0f161a5293c719d62e42bcdf406e245431db",
+         "source_commit" : "7d8d3d481e1af561f97464583b62d94967e08344",
+         "source_public_path" : "public/files/p2/tools/p2_recovery_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 3,
+         "bytes" : 7190,
+         "path" : "tools/sealed_v1/p3_receipts_v1.pl",
+         "sha256" : "01843e4405063008f1145ffee83241d68131de6a2886b7e6edb950590bd2af8f",
+         "source_commit" : "249b49a9da7bbaac33573a7293f966135be88902",
+         "source_public_path" : "public/files/p3/tools/p3_receipts_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 4,
+         "bytes" : 4535,
+         "path" : "tools/sealed_v1/p4_check_candidates.pl",
+         "sha256" : "2b5cc4966c9fe5a1fe8f1323a30b6b1d17c7b8b4c2e5b892b327da6d2454b6cc",
+         "source_commit" : "596cc2cad9bce6ebf183b6c8d24e7020394b3314",
+         "source_public_path" : "public/files/p4/tools/p4_check_candidates.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 4,
+         "bytes" : 4572,
+         "path" : "tools/sealed_v1/p4_mail_selftest.sh",
+         "sha256" : "5a8a948426788b92b5e9fd730844d487430bc99ea1f75b31e451319c745bbd74",
+         "source_commit" : "596cc2cad9bce6ebf183b6c8d24e7020394b3314",
+         "source_public_path" : "public/files/p4/tools/p4_mail_selftest.sh",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 4,
+         "bytes" : 9941,
+         "path" : "tools/sealed_v1/p4_mail_v1.pl",
+         "sha256" : "4eeddea62f2781b4b1b0693cc3498e25017da4c6af101f7ee2670a878b94c019",
+         "source_commit" : "596cc2cad9bce6ebf183b6c8d24e7020394b3314",
+         "source_public_path" : "public/files/p4/tools/p4_mail_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 5,
+         "bytes" : 5126,
+         "path" : "tools/sealed_v1/p5_first_window_v1.pl",
+         "sha256" : "6dad4a08148db816242ff79106a232f8ac0cd78bea39fd459e94f59f2bc567d5",
+         "source_commit" : "49c12dff5d25319141d5cbd2a9c82c62d5fdc547",
+         "source_public_path" : "public/files/p5/tools/p5_first_window_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 6,
+         "bytes" : 6103,
+         "path" : "tools/sealed_v1/p6_public_guard_v1.pl",
+         "sha256" : "af846b246ed632c12053a6d1d4cc07e61985856249fc689d41346d020bc56731",
+         "source_commit" : "ad9a5d6215973068f0bd93f3fbc3808665478a00",
+         "source_public_path" : "public/files/p6/tools/p6_public_guard_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 7,
+         "bytes" : 5403,
+         "path" : "tools/sealed_v1/p7_protocol_integration_v1.pl",
+         "sha256" : "6df9a88627c1fb61e2fe11e7a6409d9b5d0ff24117377e71a8b92df298eea287",
+         "source_commit" : "659a8e8c44043c2631d28644d99666e59595cacd",
+         "source_public_path" : "public/files/p7/tools/p7_protocol_integration_v1.pl",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      },
+      {
+         "author_seat" : 8,
+         "bytes" : 3619,
+         "path" : "tools/sealed_v1/p8_multikey_selftest_v1.sh",
+         "sha256" : "c026e7d5081003858421c653cfdd1c2b71c4f7dc5bbbd4490ea2637fa718f534",
+         "source_commit" : "4c3e7a7d4d183d4ceba8395503639d19c10e0654",
+         "source_public_path" : "public/files/p8/tools/p8_multikey_selftest_v1.sh",
+         "source_public_snapshot" : "ad263a6b1ee821cab0a36d82ce61a2bd26b87146"
+      }
+   ],
+   "v" : 1
+}

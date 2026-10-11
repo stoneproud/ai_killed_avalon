@@ -1,0 +1,252 @@
+{
+  "format": "sealed-mail-challenge-publication-v1",
+  "revision": 21,
+  "publication": 1,
+  "scope": "Fresh adopted but undealt eight-seat scenario; no original accounts, private keys, model memory or later roles.",
+  "source_git": "5c8bb919690101fa4cc39f49bcf53a9bcb8efa43",
+  "base_archive": {
+    "name": "sealed_mail_challenge_revision21.zip",
+    "sha256": "ea8811bdd1face249b5d13a918a420a02bff38cd4bc2b995b4974f024aa5d22c"
+  },
+  "repository": "https://github.com/stoneproud/ai_killed_avalon",
+  "model_calls": 0,
+  "vendor_files": 13,
+  "files": [
+    {
+      "path": ".containerignore",
+      "bytes": 67,
+      "sha256": "d4647dd01a709843af3e3b7bf152f039e1000d528241cb1f7369719751079093"
+    },
+    {
+      "path": ".dockerignore",
+      "bytes": 67,
+      "sha256": "d4647dd01a709843af3e3b7bf152f039e1000d528241cb1f7369719751079093"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 178,
+      "sha256": "4ae025fca259645053b0db96c1548d331aabfc202a822e40df6f4ed5539b4d80"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/challenge_report.md",
+      "bytes": 875,
+      "sha256": "2222bb101a8f58ab725b2fd5feef6e0949febbb552e92551038c83f2cf3f3912"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 71,
+      "sha256": "5486cb816b8c7afe6dd16408012753243cc6e188da83bfb7c0f048097f6a1c60"
+    },
+    {
+      "path": "CREDITS.md",
+      "bytes": 2763,
+      "sha256": "c11e277705c948743e66d1f4b4604b6d9fb02d8a2264b78db68d0446ef0cd29e"
+    },
+    {
+      "path": "Containerfile",
+      "bytes": 346,
+      "sha256": "cf93514fe400823bf61269302a1e97a961817def4849789acfa35e5f333ae44e"
+    },
+    {
+      "path": "HOST_README.md",
+      "bytes": 9259,
+      "sha256": "29a0d778c83abb5b346351888c31dadcf500d4f0b7bc7f1fc72c858af75b80f9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10563,
+      "sha256": "ae846bdb95be23245e9750c72689990b5f04dc066103a0592fd03e9fce0f3159"
+    },
+    {
+      "path": "RESEARCH_COMPARISON.md",
+      "bytes": 3066,
+      "sha256": "9b053708a2c1c7edee6f5d0b72cb13486bdd3475fcb02ac7c510acbb9f1769cc"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 3019,
+      "sha256": "2737aa826e8f5c124d9673985b9ab6076b123ae325886c7b5d7d8a0dd67ad9df"
+    },
+    {
+      "path": "bot.py",
+      "bytes": 15178,
+      "sha256": "ba537f8dc79823590b2cf48c162d260d4bf37cc4b55bf1dd5fb22082c9a82131"
+    },
+    {
+      "path": "challenge.py",
+      "bytes": 8274,
+      "sha256": "109e593987a984c108a63b9d1077a8e81aba19a4f57a65d9f1482afda7952668"
+    },
+    {
+      "path": "host.py",
+      "bytes": 18977,
+      "sha256": "4b27282bfac3afdb6810c9a1f765d6908717cd287d00f759786bcab471103a4c"
+    },
+    {
+      "path": "play.py",
+      "bytes": 2169,
+      "sha256": "e4f9c452669b68c3adb307500d8a012918a59dc3c99ae74d837974eda6b46c68"
+    },
+    {
+      "path": "provenance/revision21_SHA256SUMS.txt",
+      "bytes": 4107,
+      "sha256": "9ed1f8294fb7b516bdca1298a0b57092d5bcb16c28ee70bf4082a2617b953632"
+    },
+    {
+      "path": "provenance/revision21_manifest.json",
+      "bytes": 7550,
+      "sha256": "3afa04db162c22512e62c9e6983fd8459eec9157fcbb49d190f4378be4c33e50"
+    },
+    {
+      "path": "tests/acquire_python_base.py",
+      "bytes": 3556,
+      "sha256": "45dd314763e3ec98a2267e98d97b6a234397f911fa699363eb0ab61fb78eaa58"
+    },
+    {
+      "path": "tests/bot_e2e_report.json",
+      "bytes": 8491,
+      "sha256": "7bb534f356e9c9109f06c2e414a4b3cd9375584eadb0cea74f36a9627f2660f9"
+    },
+    {
+      "path": "tests/bot_e2e_report.md",
+      "bytes": 6818,
+      "sha256": "97696df3a0aeecb3b988aa6a54bf32a9fb4664383cee57a0f3d1196dbec7ef23"
+    },
+    {
+      "path": "tests/container_cli_report.json",
+      "bytes": 15401,
+      "sha256": "b5e88a64d7584ffd55a3f361cd5904ffe08615a4b9ca0fcf617ab4ade40a8092"
+    },
+    {
+      "path": "tests/container_cli_report.md",
+      "bytes": 3869,
+      "sha256": "eeb3df76cf4378a8534f00b353b07a91d17e37d3e2539cad00a3e512edc01033"
+    },
+    {
+      "path": "tests/review_bot.json",
+      "bytes": 1296,
+      "sha256": "c9f088db7a40cdefd64d49cf2d5ecae0563e1295b4b42c1a136fc082b13e3127"
+    },
+    {
+      "path": "tests/review_bot.md",
+      "bytes": 3981,
+      "sha256": "9868c194374cf6d8cde78d191b54e959a8958db8b37f66a3ccedad0b39ffbc3e"
+    },
+    {
+      "path": "tests/review_final.json",
+      "bytes": 1584,
+      "sha256": "0516729161c6039f50899a7e0b582ebd7acb364c8bb0ad6301ba92282319ba16"
+    },
+    {
+      "path": "tests/review_final.md",
+      "bytes": 3187,
+      "sha256": "e659ac50a986c68734087f1321c8844f8885148d4f2a1fe01a5b4471711691da"
+    },
+    {
+      "path": "tests/review_setup.json",
+      "bytes": 1081,
+      "sha256": "ec998ddc38c90d7daa41f1ef625a4427c046b5e87299a7cb530b257dffc2abd1"
+    },
+    {
+      "path": "tests/review_setup.md",
+      "bytes": 2687,
+      "sha256": "e1f9ae566ec0060ae8658b426f49beea316adbbd71d947f2bc7462a3ff27465c"
+    },
+    {
+      "path": "tests/test_bot.py",
+      "bytes": 6280,
+      "sha256": "05342511e43c37a9f4fb1ff8237fbb02449025e8fc86b59431810c6f193cf243"
+    },
+    {
+      "path": "tests/test_bot_attacks.py",
+      "bytes": 9664,
+      "sha256": "069a437d0a04b3f288fab075111ac0e9518dc81e27dfd60b7ae791e670b3f893"
+    },
+    {
+      "path": "tests/test_host.py",
+      "bytes": 9820,
+      "sha256": "5bab44b52c35de8b505144bf420509701356c1ad508a16662ab3371e80597ce7"
+    },
+    {
+      "path": "tests/test_setup.py",
+      "bytes": 2376,
+      "sha256": "65390b7cf4af8ed4b4af6240990159bca733035cd79febc8130292ed2fd3bcbc"
+    },
+    {
+      "path": "tests/validate_container_cli.py",
+      "bytes": 8011,
+      "sha256": "94ad0a038f8ddd049bc45afab4837de0603534a2e4f9d9bf2484aff018c0cdf5"
+    },
+    {
+      "path": "vendor/artifacts/p4_protocol_v1.md",
+      "bytes": 15382,
+      "sha256": "3b82646c1b672f42500b739a43ed7d7f44be0000f43a41427a6a512124548ba1"
+    },
+    {
+      "path": "vendor/artifacts/p4_protocol_v1.sha256",
+      "bytes": 1232,
+      "sha256": "bd54b88c2a19fdc123ff73e34fa9bc84bc7425b169db0b225b48267b6f982e68"
+    },
+    {
+      "path": "vendor/artifacts/p4_protocol_v1_manifest.json",
+      "bytes": 7422,
+      "sha256": "3f4fd7a1cbae69d356c721336afa8a87eeff54dfab9db165a3e2d4f150904013"
+    },
+    {
+      "path": "vendor/provenance.json",
+      "bytes": 2561,
+      "sha256": "6b518da82feb0d8311dc42c93ad2b6601655ef612c67e5bd43be345af24e5b3a"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p1_selection_v1.pl",
+      "bytes": 5211,
+      "sha256": "3e10bf13754d737aa77550cce6937a2e06af32c986ac80c3fb677366e8edbfa8"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p2_recovery_v1.pl",
+      "bytes": 8685,
+      "sha256": "16c64d2b361eecc0108e40a581ea0f161a5293c719d62e42bcdf406e245431db"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p3_receipts_v1.pl",
+      "bytes": 7190,
+      "sha256": "01843e4405063008f1145ffee83241d68131de6a2886b7e6edb950590bd2af8f"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p4_check_candidates.pl",
+      "bytes": 4535,
+      "sha256": "2b5cc4966c9fe5a1fe8f1323a30b6b1d17c7b8b4c2e5b892b327da6d2454b6cc"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p4_mail_selftest.sh",
+      "bytes": 4572,
+      "sha256": "5a8a948426788b92b5e9fd730844d487430bc99ea1f75b31e451319c745bbd74"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p4_mail_v1.pl",
+      "bytes": 9941,
+      "sha256": "4eeddea62f2781b4b1b0693cc3498e25017da4c6af101f7ee2670a878b94c019"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p5_first_window_v1.pl",
+      "bytes": 5126,
+      "sha256": "6dad4a08148db816242ff79106a232f8ac0cd78bea39fd459e94f59f2bc567d5"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p6_public_guard_v1.pl",
+      "bytes": 6103,
+      "sha256": "af846b246ed632c12053a6d1d4cc07e61985856249fc689d41346d020bc56731"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p7_protocol_integration_v1.pl",
+      "bytes": 5403,
+      "sha256": "6df9a88627c1fb61e2fe11e7a6409d9b5d0ff24117377e71a8b92df298eea287"
+    },
+    {
+      "path": "vendor/tools/sealed_v1/p8_multikey_selftest_v1.sh",
+      "bytes": 3619,
+      "sha256": "c026e7d5081003858421c653cfdd1c2b71c4f7dc5bbbd4490ea2637fa718f534"
+    }
+  ],
+  "caveat": "Historical export manifests are preserved under provenance. Current manifest excludes itself and SHA256SUMS.txt; SHA256SUMS.txt additionally hashes this manifest. Git identifies this publication commit."
+}

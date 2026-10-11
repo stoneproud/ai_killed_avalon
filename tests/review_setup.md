@@ -1,0 +1,13 @@
+# Independent setup/security review
+
+Reviewed host.py, challenge.py, Containerfile, HOST_README.md and the original vendor first-window consumer. No implementation changes, model calls, old-room secrets, Git commits, publication, or container lifecycle changes were performed.
+
+The operator boundary is explicit: seat identifiers are routing parameters, not authentication. Host state and all private role assignments must remain outside player mounts. The sandbox command mounts only its seat workspace writable and its export read-only; network is disabled, the root filesystem is read-only, capabilities are dropped and privilege escalation is disabled. No provider credential/environment forwarding appears in the command. Windows mkdir/chmod modes do not establish independent per-user ACL isolation; the documented container boundary is required.
+
+Fresh initialization generates eight RSA3072 PEM-format SSH keys and public PEM registration, and does not deal roles. Original vendor material is verified by SHA256 and copied unchanged. Export uses main-only Git transport without local object sharing, removes the origin URL and checks the real HEAD against the request snapshot. Main publication retains public content and provenance metadata without including host source refs.
+
+A new temporary synthetic fixture added an orphan commit containing only a nonsecret sentinel, referenced by both a host-only branch and tag. Export contained only refs/heads/main, and git cat-file could not find that synthetic private commit. No existing room key was opened by this review. The p5 first-window tool consumes source_commit as bulletin metadata and does not require the corresponding source object to be exported.
+
+Hardening observation (P2, nonblocking for the documented trusted-operator/default sandbox flow): read_reply checks every ancestor with lstat and then opens by pathname. A concurrently writable path can change between those operations. This is not a demonstrated escape through the synchronous default sandbox, which has already exited before operator submission. If a remote or concurrent player service is added, use a race-resistant handoff (immutable operator-owned copy, or platform-native handle-based no-follow validation), rather than assuming the current checks enforce a concurrent adversarial filesystem boundary.
+
+Existing unittest suite ran using new temporary fixtures only: `python -m unittest discover -s tests -v` passed all 16 tests in 149.018 seconds. This includes fresh-key checks within the newly constructed fixture only. Container runtime behavior is not independently exercised by this review; the image/bot is still being completed elsewhere.

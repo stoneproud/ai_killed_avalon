@@ -1,0 +1,4 @@
+# Preserve published file bytes and recorded hashes on every platform.
+* -text
+# Historical player-authored source includes original CRCRLF bytes.
+vendor/** whitespace=cr-at-eol

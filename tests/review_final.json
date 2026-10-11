@@ -1,0 +1,20 @@
+{
+  "review":"independent final package review",
+  "model_calls":0,
+  "old_experiment_reads":false,
+  "private_key_reads":false,
+  "implementation_modified":false,
+  "own_helper_finding":"fixed",
+  "short_regression":{"command":"python -m unittest discover -s tests -p test_bot.py -k own_report -v","tests":1,"seconds":0.340,"passed":true},
+  "bot_sha256":"ba537f8dc79823590b2cf48c162d260d4bf37cc4b55bf1dd5fb22082c9a82131",
+  "all_container_report_source_hashes_match":true,
+  "vendor_files_verified":13,
+  "container_evidence":{"source":"tests/container_cli_report.json","status":"passed","actions":83,"source_hashes_independently_matched":true,"rerun_by_this_reviewer":false,"supersedes_prior_container_not_tested_limit":true},
+  "manual_AI_boundary_documented":true,
+  "remaining_limits":["Trusted local operator routing is not remote authentication","read_reply pathname validation is not race-resistant against concurrent adversarial path replacement","Container evidence is a local engine probe rather than proof against kernel or engine vulnerabilities"],
+  "release_findings":[],
+  "resolved_release_findings":[{"priority":"P1","issue":"Docker build context originally lacked .dockerignore","reported_to_parent":true,"resolution":"Added byte-identical .dockerignore; parent confirms both ignore files in the release allowlist", "both_ignore_sha256":"d4647dd01a709843af3e3b7bf152f039e1000d528241cb1f7369719751079093"}],
+  "validation_document_scope_checked":true,
+  "research_comparison_scope_checked":true,
+  "external_research_facts_rechecked_by_this_final_reviewer":false
+}

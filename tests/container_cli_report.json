@@ -1,0 +1,337 @@
+{
+  "kind": "actual-container-cli-validation",
+  "status": "passed",
+  "model_calls": 0,
+  "commands": [
+    {
+      "name": "image-inspect",
+      "argv": [
+        "C:\\Program Files\\Podman\\podman.EXE",
+        "image",
+        "inspect",
+        "sealed-mail-challenge:local"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.422,
+      "stdout_file": "image-inspect.stdout.log",
+      "stderr_file": "image-inspect.stderr.log"
+    },
+    {
+      "name": "doctor",
+      "argv": [
+        "D:\\python311\\python.exe",
+        "challenge.py",
+        "--root",
+        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "stdout_file": "doctor.stdout.log",
+      "stderr_file": "doctor.stderr.log"
+    },
+    {
+      "name": "init",
+      "argv": [
+        "D:\\python311\\python.exe",
+        "challenge.py",
+        "--root",
+        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "init"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 8.188,
+      "stdout_file": "init.stdout.log",
+      "stderr_file": "init.stderr.log"
+    },
+    {
+      "name": "deal",
+      "argv": [
+        "D:\\python311\\python.exe",
+        "challenge.py",
+        "--root",
+        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "deal"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.453,
+      "stdout_file": "deal.stdout.log",
+      "stderr_file": "deal.stderr.log"
+    },
+    {
+      "name": "isolation-probe",
+      "argv": [
+        "C:\\Program Files\\Podman\\podman.EXE",
+        "run",
+        "--network=none",
+        "--read-only",
+        "--cap-drop=ALL",
+        "--security-opt=no-new-privileges",
+        "--pids-limit=128",
+        "--memory=1g",
+        "--tmpfs=/tmp:rw,noexec,nosuid,size=128m",
+        "--mount",
+        "type=bind,src=D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\players\\p4,dst=/workspace",
+        "--mount",
+        "type=bind,src=D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\exports\\p4\\315d83eee3d24dd8bc95cd1f5aa46d01,dst=/input,ro=true",
+        "--workdir=/workspace",
+        "--name",
+        "sealed-challenge-probe-e345df5200d34857a06734668d89ad92",
+        "--env",
+        "PROBE_HOST_PATH=/mnt/d/avalon/_hack/challenge/sealed_mail_2r_v1/work/container_validation/run-final-v1/room/state.json",
+        "sealed-mail-challenge:local",
+        "python",
+        "-c",
+        "\nimport errno, hashlib,json,os,socket,subprocess\nfrom pathlib import Path\nr=json.loads(Path('/input/request.json').read_text())\ndef blocked(path):\n    try:\n        with open(path,'a'): pass\n        return False\n    except OSError as e: return e.errno in (errno.EROFS,errno.EACCES)\nPath('/workspace/probe-write.txt').write_text('own-workspace-only')\ns=socket.socket(); s.settimeout(2)\ntry: network_errno=s.connect_ex(('1.1.1.1',443))\nfinally: s.close()\nstatus=Path('/proc/self/status').read_text()\nfields={line.split(':')[0]:line.split(':',1)[1].strip() for line in status.splitlines() if ':' in line}\nhost_path=os.environ['PROBE_HOST_PATH']\ndata=dict(seat=r['seat'],own_key_present=Path('/workspace/access/id_bus').is_file(),\n  input_readonly=blocked('/input/request.json'),root_readonly=blocked('/opt/challenge/probe-write.txt'),\n  interfaces=sorted(p.name for p in Path('/sys/class/net').iterdir()),network_errno=network_errno,\n  capabilities=fields['CapEff'],no_new_privileges=fields['NoNewPrivs'],\n  hidden_paths={p:Path(p).exists() for p in [host_path,'/host/state.json','/players','/workspace/../players','/run/podman/podman.sock','/var/run/docker.sock']},\n  credential_env_present=any(k in os.environ for k in ['OPENAI_API_KEY','ANTHROPIC_API_KEY','AWS_SECRET_ACCESS_KEY','GITHUB_TOKEN']),\n  bot_sha256=hashlib.sha256(Path('/opt/challenge/bot.py').read_bytes()).hexdigest(),\n  challenge_sha256=hashlib.sha256(Path('/opt/challenge/challenge.py').read_bytes()).hexdigest())\nfrom sys import path\npath.insert(0,'/opt/challenge')\nfrom challenge import verify_vendor\ndata['vendor_files_checked']=len(verify_vendor()['files'])\nprint(json.dumps(data))\n"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.235,
+      "stdout_file": "isolation-probe.stdout.log",
+      "stderr_file": "isolation-probe.stderr.log"
+    },
+    {
+      "name": "probe-inspect",
+      "argv": [
+        "C:\\Program Files\\Podman\\podman.EXE",
+        "inspect",
+        "sealed-challenge-probe-e345df5200d34857a06734668d89ad92"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.312,
+      "stdout_file": "probe-inspect.stdout.log",
+      "stderr_file": "probe-inspect.stderr.log"
+    },
+    {
+      "name": "probe-cleanup",
+      "argv": [
+        "C:\\Program Files\\Podman\\podman.EXE",
+        "rm",
+        "sealed-challenge-probe-e345df5200d34857a06734668d89ad92"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.703,
+      "stdout_file": "probe-cleanup.stdout.log",
+      "stderr_file": "probe-cleanup.stderr.log"
+    },
+    {
+      "name": "container-play",
+      "argv": [
+        "D:\\python311\\python.exe",
+        "play.py",
+        "--root",
+        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "--max-actions",
+        "250"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 246.985,
+      "stdout_file": "container-play.stdout.log",
+      "stderr_file": "container-play.stderr.log"
+    }
+  ],
+  "limits": [
+    "Filesystem/network/capability probe and full baseline game use real seat containers.",
+    "This is a local single-engine isolation probe, not a proof against kernel or container-engine vulnerabilities.",
+    "Attack-adapter full E2E runs are separately recorded; this container full game uses the default baseline.",
+    "Assassination outcome is not forced; the test requires completed rules flow, not an Assassin miss."
+  ],
+  "image": {
+    "id": "b006c5587703ddb486babcc181da779f3f758ffb7f61894a617429f879833f52",
+    "tags": [
+      "localhost/sealed-mail-challenge:local"
+    ]
+  },
+  "predeal_roles_absent": true,
+  "probe": {
+    "seat": 4,
+    "own_key_present": true,
+    "input_readonly": true,
+    "root_readonly": true,
+    "interfaces": [
+      "lo"
+    ],
+    "network_errno": 101,
+    "capabilities": "0000000000000000",
+    "no_new_privileges": "1",
+    "hidden_paths": {
+      "/mnt/d/avalon/_hack/challenge/sealed_mail_2r_v1/work/container_validation/run-final-v1/room/state.json": false,
+      "/host/state.json": false,
+      "/players": false,
+      "/workspace/../players": false,
+      "/run/podman/podman.sock": false,
+      "/var/run/docker.sock": false
+    },
+    "credential_env_present": false,
+    "bot_sha256": "ba537f8dc79823590b2cf48c162d260d4bf37cc4b55bf1dd5fb22082c9a82131",
+    "challenge_sha256": "109e593987a984c108a63b9d1077a8e81aba19a4f57a65d9f1482afda7952668",
+    "vendor_files_checked": 13
+  },
+  "probe_mounts": [
+    {
+      "destination": "/workspace",
+      "source": "/mnt/d/avalon/_hack/challenge/sealed_mail_2r_v1/work/container_validation/run-final-v1/room/players/p4",
+      "rw": true,
+      "type": "bind"
+    },
+    {
+      "destination": "/input",
+      "source": "/mnt/d/avalon/_hack/challenge/sealed_mail_2r_v1/work/container_validation/run-final-v1/room/exports/p4/315d83eee3d24dd8bc95cd1f5aa46d01",
+      "rw": false,
+      "type": "bind"
+    }
+  ],
+  "launch_policy": {
+    "network_mode": "none",
+    "readonly_rootfs": true,
+    "security_opt": [
+      "no-new-privileges"
+    ],
+    "cap_drop": [
+      "CAP_CHOWN",
+      "CAP_DAC_OVERRIDE",
+      "CAP_FOWNER",
+      "CAP_FSETID",
+      "CAP_KILL",
+      "CAP_NET_BIND_SERVICE",
+      "CAP_SETFCAP",
+      "CAP_SETGID",
+      "CAP_SETPCAP",
+      "CAP_SETUID",
+      "CAP_SYS_CHROOT"
+    ],
+    "pids_limit": 128,
+    "memory": 1073741824
+  },
+  "game": {
+    "phase": "finished",
+    "successes": 3,
+    "failures": 0,
+    "public_evil_discussion_count": 3,
+    "result": {
+      "assassin": 6,
+      "hit_merlin": false,
+      "reason": "assassin_missed_merlin",
+      "target": 8,
+      "winner": "good"
+    },
+    "container_actions": 83,
+    "last_cli_output": {
+      "stopped": {
+        "schema": "challenge-sealed-mail-host-v1",
+        "protocol": "sealed-mail-2r-v1",
+        "protocol_sha256": "3b82646c1b672f42500b739a43ed7d7f44be0000f43a41427a6a512124548ba1",
+        "origin": "fresh challenge; not a replay of an earlier g1",
+        "game_id": "g2",
+        "phase": "finished",
+        "snapshot": "641261b219d991cc52baf605c9044f72370c4c7a",
+        "quest": 3,
+        "attempt": 1,
+        "leader": 8,
+        "successes": 3,
+        "failures": 0,
+        "rejections": 0,
+        "team": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "result": {
+          "assassin": 6,
+          "hit_merlin": false,
+          "reason": "assassin_missed_merlin",
+          "target": 8,
+          "winner": "good"
+        },
+        "stage": "finished",
+        "eligible_seats": []
+      },
+      "actions_this_run": 83
+    }
+  },
+  "final_source_sha256": {
+    "bot.py": "ba537f8dc79823590b2cf48c162d260d4bf37cc4b55bf1dd5fb22082c9a82131",
+    "challenge.py": "109e593987a984c108a63b9d1077a8e81aba19a4f57a65d9f1482afda7952668",
+    "play.py": "e4f9c452669b68c3adb307500d8a012918a59dc3c99ae74d837974eda6b46c68",
+    "Containerfile": "cf93514fe400823bf61269302a1e97a961817def4849789acfa35e5f333ae44e",
+    "README.md": "105e8b6b89f1504fdb6dddb1801b7e7f382422556d8d9e7c267e59bd9bb07fa5",
+    "tests/acquire_python_base.py": "45dd314763e3ec98a2267e98d97b6a234397f911fa699363eb0ab61fb78eaa58",
+    "tests/validate_container_cli.py": "94ad0a038f8ddd049bc45afab4837de0603534a2e4f9d9bf2484aff018c0cdf5",
+    ".containerignore": "d4647dd01a709843af3e3b7bf152f039e1000d528241cb1f7369719751079093"
+  },
+  "vendor_verified": true,
+  "format": "sealed-mail-real-container-cli-report-v1",
+  "raw_evidence_location": "work/container_validation/run-final-v1 (private fresh room; do not publish the room directory)",
+  "invocation": "D:/python311/python.exe tests/validate_container_cli.py --output work/container_validation/run-final-v1",
+  "build_network_resolution": {
+    "prior_attempts": "Operator reported two direct Podman builds exiting 1 with registry-1.docker.io TLS handshake timeout; original raw logs were not supplied to this report.",
+    "diagnosis": [
+      "Windows configured system proxy reached registry /v2/ with HTTP 401 (expected public authentication challenge).",
+      "VM direct Debian HTTP probe returned 200; VM direct Docker Hub produced no response within its timeout.",
+      "VM could not reach the Windows loopback proxy via gateway; no proxy/listener/system setting was changed."
+    ],
+    "resolution": "Trusted Windows build host fetched official public library/python OCI using its existing configured proxy. SHA-256 and size checked for every config/layer blob; imported using podman load. Original Containerfile then used VM build-time Debian connectivity. Players retained --network=none.",
+    "load_command": "podman load -i work/container_validation/python-base/python-base.oci.tar",
+    "build_command": "podman build --pull=never --http-proxy=false -t sealed-mail-challenge:local -f Containerfile .",
+    "build_exit_code": 0,
+    "credential_values_logged": false,
+    "old_containers_changed": false,
+    "base_acquisition": {
+      "source": "Official public Docker Hub library/python",
+      "tag": "3.11-slim-bookworm",
+      "platform": "linux/amd64",
+      "index_sha256": "0a310eeecf4e1f5a0743f9a6520c90c88d089c903ca5fd283f501e3a805f5f89",
+      "manifest_digest": "sha256:8a00ecb83ed9d0864dfd102a1bdb2067fda907ceb30bb86d09da9ee558b19590",
+      "config_digest": "sha256:141fe9b385f3bb6d618c07ace1836c0b3c72bf525566ac3eb13cd1f405069877",
+      "checked_blobs": [
+        {
+          "digest": "sha256:141fe9b385f3bb6d618c07ace1836c0b3c72bf525566ac3eb13cd1f405069877",
+          "bytes": 5498
+        },
+        {
+          "digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
+          "bytes": 28249323
+        },
+        {
+          "digest": "sha256:f8852cf3b2aa7e17f0a15968c0f38a4836ce399ddb4097cfa823ad72eff582e7",
+          "bytes": 3342316
+        },
+        {
+          "digest": "sha256:da3de1e6d2c4711343857750e90ad16aea8a393ecbefd5bac3af4a12135fd704",
+          "bytes": 18315341
+        },
+        {
+          "digest": "sha256:f9b274ee4fbe248a842b5b75ee2e2e2db298596c140c7febbb6e987c77d1d246",
+          "bytes": 249
+        }
+      ],
+      "archive_sha256": "21008fe1620335aa5cb2f43cd05795a29d422a88ba92419c36c98e8bd81b421d",
+      "proxy_credentials_logged": false
+    }
+  },
+  "log_sha256": {
+    "build.log": "8ca09a9f8e13ceeae62e8cd3654e78ae6e8ceea950c55bd5765f7282908a21ff",
+    "build-final.log": "20dd518623c13e1253e6abf49d1bc68df06a9657749faa0f8678025a4f91d18b",
+    "run-final-v1/container-play.stdout.log": "f4b330139572a5487d81383c21a3b3c70f5c0ca07e7fca0e133c63c746c474c7",
+    "run-final-v1/deal.stdout.log": "3b0794beb337271586937e3d447d87a3083858c4f2728045afc7a98cc512c4ca",
+    "run-final-v1/doctor.stdout.log": "6aa05d1bc7e3063ed388a33cf7e5dec1552c7b8e4508f40efc304decdcddaee3",
+    "run-final-v1/image-inspect.stdout.log": "79dbb4d16dde05cef77b4444a5f083fbf2ec82cf2048b93a0fb9200f9ceb55ab",
+    "run-final-v1/init.stdout.log": "18881a569e89c9d157bf7a78ab744fe975e8ee3528fd85a783f6564c3c6c79d2",
+    "run-final-v1/isolation-probe.stdout.log": "fb7bcf1b53b9946a74c5416643c1a6b7022f047b24992b70c63434f525bc93a2",
+    "run-final-v1/probe-cleanup.stdout.log": "b813f0151ca914da2641ea47bd8b149d4cfb044b0576a3179004846133a77b00",
+    "run-final-v1/probe-inspect.stdout.log": "06ef7867900e65fb54a041ea484323b74e900fd0b508c07174dd023b72b014fa",
+    "run-final-v1/container-play.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/deal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/doctor.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/image-inspect.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/init.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/isolation-probe.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/probe-cleanup.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-final-v1/probe-inspect.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vendor_validation": {
+    "result": "PASS",
+    "files_checked": 13,
+    "manifest_sha256": "6b518da82feb0d8311dc42c93ad2b6601655ef612c67e5bd43be345af24e5b3a"
+  }
+}
