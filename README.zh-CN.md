@@ -4,6 +4,8 @@
 
 英文读者可直接使用英文README、[英文主持接口](HOST_README.md)和[协议英文导读](docs/PROTOCOL_GUIDE.en.md)。两版README共用程序与命令，不区分挑战规则。
 
+公开材料的[脱敏检查与保留说明](docs/PRIVACY_REVIEW.md)列出处理范围；修改前后哈希见[逐文件记录](docs/privacy_redactions.json)。
+
 **协议、代码、桌子都给你。不服？你来试试。**
 
 *The protocol. The code. The table. Your move.*

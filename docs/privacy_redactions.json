@@ -1,0 +1,38 @@
+{
+  "scope": "Public test-report metadata only; original execution results and code retained",
+  "files": [
+    {
+      "path": "tests/bot_e2e_report.json",
+      "original_sha256": "7bb534f356e9c9109f06c2e414a4b3cd9375584eadb0cea74f36a9627f2660f9",
+      "public_sha256": "a0fa45549060f25c0f90ae98b2311738ae9b504dc69ea0777ecc25b82509ec23",
+      "changes": {
+        "local_path": 6,
+        "tool_session_id": 5
+      }
+    },
+    {
+      "path": "tests/bot_e2e_report.md",
+      "original_sha256": "97696df3a0aeecb3b988aa6a54bf32a9fb4664383cee57a0f3d1196dbec7ef23",
+      "public_sha256": "dfe988fe9f3af90b656c156a2b5182125e51d1981e01921467971fe1402788c1",
+      "changes": {
+        "local_path": 6
+      }
+    },
+    {
+      "path": "tests/container_cli_report.json",
+      "original_sha256": "b5e88a64d7584ffd55a3f361cd5904ffe08615a4b9ca0fcf617ab4ade40a8092",
+      "public_sha256": "2c312bcb1f5e738b4edb734eaf081f18785d6d991855ef5c3e99a4f53f9f53df",
+      "changes": {
+        "local_path": 15
+      }
+    },
+    {
+      "path": "tests/container_cli_report.md",
+      "original_sha256": "eeb3df76cf4378a8534f00b353b07a91d17e37d3e2539cad00a3e512edc01033",
+      "public_sha256": "dad5b0ae4f29e08c9c751458b37c8a0e65b81baaa66b6dc85cd916498bee27f4",
+      "changes": {
+        "local_path": 1
+      }
+    }
+  ]
+}

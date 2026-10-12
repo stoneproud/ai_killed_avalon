@@ -23,6 +23,7 @@ The **80%** figure is conditional: if Good completes three quests, Merlin leaves
 | Connect your own AI or play manually | [Seat isolation](#seat-isolation-and-manual-play) · [AI integration](#bring-your-own-ai) |
 | Implement a different player | [English host API and action schemas](HOST_README.md) |
 | Report a finding | [Challenge report](https://github.com/stoneproud/ai_killed_avalon/issues/new?template=challenge_report.md) |
+| Check publication privacy | [What was redacted and what was retained](docs/PRIVACY_REVIEW.md) |
 
 The original method document and the players' later two-circuit protocol are **different artifacts**. The players' frozen Chinese protocol and ten original tools remain unchanged in `vendor/`. The English guide and translation are reading aids added for this publication, not text the players received or authored.
 

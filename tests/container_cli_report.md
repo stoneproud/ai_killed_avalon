@@ -2,7 +2,7 @@
 
 Status: **PASSED**. Model calls: 0.
 
-Invocation: `D:/python311/python.exe tests/validate_container_cli.py --output work/container_validation/run-final-v1`.
+Invocation: `LOCAL_PYTHON/python.exe tests/validate_container_cli.py --output work/container_validation/run-final-v1`.
 
 Image `sealed-mail-challenge:local`: `b006c5587703ddb486babcc181da779f3f758ffb7f61894a617429f879833f52`.
 

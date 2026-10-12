@@ -6,7 +6,7 @@
     {
       "name": "image-inspect",
       "argv": [
-        "C:\\Program Files\\Podman\\podman.EXE",
+        "LOCAL_SYSTEM_TOOLS\\Podman\\podman.EXE",
         "image",
         "inspect",
         "sealed-mail-challenge:local"
@@ -19,10 +19,10 @@
     {
       "name": "doctor",
       "argv": [
-        "D:\\python311\\python.exe",
+        "LOCAL_PYTHON\\python.exe",
         "challenge.py",
         "--root",
-        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
         "doctor"
       ],
       "exit_code": 0,
@@ -33,10 +33,10 @@
     {
       "name": "init",
       "argv": [
-        "D:\\python311\\python.exe",
+        "LOCAL_PYTHON\\python.exe",
         "challenge.py",
         "--root",
-        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
         "init"
       ],
       "exit_code": 0,
@@ -47,10 +47,10 @@
     {
       "name": "deal",
       "argv": [
-        "D:\\python311\\python.exe",
+        "LOCAL_PYTHON\\python.exe",
         "challenge.py",
         "--root",
-        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
         "deal"
       ],
       "exit_code": 0,
@@ -61,7 +61,7 @@
     {
       "name": "isolation-probe",
       "argv": [
-        "C:\\Program Files\\Podman\\podman.EXE",
+        "LOCAL_SYSTEM_TOOLS\\Podman\\podman.EXE",
         "run",
         "--network=none",
         "--read-only",
@@ -71,9 +71,9 @@
         "--memory=1g",
         "--tmpfs=/tmp:rw,noexec,nosuid,size=128m",
         "--mount",
-        "type=bind,src=D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\players\\p4,dst=/workspace",
+        "type=bind,src=LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\players\\p4,dst=/workspace",
         "--mount",
-        "type=bind,src=D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\exports\\p4\\315d83eee3d24dd8bc95cd1f5aa46d01,dst=/input,ro=true",
+        "type=bind,src=LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room\\exports\\p4\\315d83eee3d24dd8bc95cd1f5aa46d01,dst=/input,ro=true",
         "--workdir=/workspace",
         "--name",
         "sealed-challenge-probe-e345df5200d34857a06734668d89ad92",
@@ -92,7 +92,7 @@
     {
       "name": "probe-inspect",
       "argv": [
-        "C:\\Program Files\\Podman\\podman.EXE",
+        "LOCAL_SYSTEM_TOOLS\\Podman\\podman.EXE",
         "inspect",
         "sealed-challenge-probe-e345df5200d34857a06734668d89ad92"
       ],
@@ -104,7 +104,7 @@
     {
       "name": "probe-cleanup",
       "argv": [
-        "C:\\Program Files\\Podman\\podman.EXE",
+        "LOCAL_SYSTEM_TOOLS\\Podman\\podman.EXE",
         "rm",
         "sealed-challenge-probe-e345df5200d34857a06734668d89ad92"
       ],
@@ -116,10 +116,10 @@
     {
       "name": "container-play",
       "argv": [
-        "D:\\python311\\python.exe",
+        "LOCAL_PYTHON\\python.exe",
         "play.py",
         "--root",
-        "D:\\avalon\\_hack\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
+        "LOCAL_PROJECT\\challenge\\sealed_mail_2r_v1\\work\\container_validation\\run-final-v1\\room",
         "--max-actions",
         "250"
       ],
@@ -262,7 +262,7 @@
   "vendor_verified": true,
   "format": "sealed-mail-real-container-cli-report-v1",
   "raw_evidence_location": "work/container_validation/run-final-v1 (private fresh room; do not publish the room directory)",
-  "invocation": "D:/python311/python.exe tests/validate_container_cli.py --output work/container_validation/run-final-v1",
+  "invocation": "LOCAL_PYTHON/python.exe tests/validate_container_cli.py --output work/container_validation/run-final-v1",
   "build_network_resolution": {
     "prior_attempts": "Operator reported two direct Podman builds exiting 1 with registry-1.docker.io TLS handshake timeout; original raw logs were not supplied to this report.",
     "diagnosis": [

@@ -10,11 +10,11 @@
   "final_helper_change": "Own-report insertion now requires current eligible unsubmitted last leader speech, receipt or x_choice in its formal current window, and p5 slot no_first_event.",
   "checks": [
     {
-      "command": "D:/python311/python.exe -m unittest discover -s tests -p test_bot.py -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest discover -s tests -p test_bot.py -v",
       "exit_code": 0,
       "tests_run": 2,
       "elapsed_seconds": 312.352,
-      "tool_session_id": 61517,
+      "tool_session_id": "REDACTED_RUN_d1b4e161b203eb52",
       "stdout_summary": "Ran 2 tests in 312.352s\n\nOK",
       "assertion_evidence": [
         "Fresh initialize: eight new RSA-3072 keypairs; random Host.deal; seat-local Bot via published-only export for every action.",
@@ -25,11 +25,11 @@
       "revision_scope": "Historical baseline before x_source/fail_quests extensions and the final own-report hardening. Executed file hashes were not captured."
     },
     {
-      "command": "D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_four_A_choice_recovery -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_four_A_choice_recovery -v",
       "exit_code": 0,
       "tests_run": 1,
       "elapsed_seconds": 472.74,
-      "tool_session_id": 33805,
+      "tool_session_id": "REDACTED_RUN_c58d18845a148ea0",
       "stdout_summary": "Ran 1 test in 472.740s\n\nOK",
       "assertion_evidence": [
         "New fixture truth [1,2,3,6,7]; Evil 4/5/8 offer [4,5,6,7,8], [1,2,3,4,5], [1,2,4,6,8].",
@@ -41,11 +41,11 @@
       "revision_scope": "Attack adapter before final own-report helper hardening. Executed file hash was not captured."
     },
     {
-      "command": "D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_five_unsplit_recovery -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_five_unsplit_recovery -v",
       "exit_code": 0,
       "tests_run": 1,
       "elapsed_seconds": 553.962,
-      "tool_session_id": 73736,
+      "tool_session_id": "REDACTED_RUN_587153bac9dbbd59",
       "stdout_summary": "Ran 1 test in 553.962s\n\nOK",
       "assertion_evidence": [
         "Same newly generated fixture roles and four actual cryptographic offers as consensus test.",
@@ -57,11 +57,11 @@
       "revision_scope": "Attack adapter before final own-report helper hardening. Executed file hash was not captured."
     },
     {
-      "command": "D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle tests.test_bot_attacks.AttackAdapterTests.test_real_mail_A_in_four_complete_game -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle tests.test_bot_attacks.AttackAdapterTests.test_real_mail_A_in_four_complete_game -v",
       "exit_code": 0,
       "tests_run": 2,
       "elapsed_seconds": 354.702,
-      "tool_session_id": 11106,
+      "tool_session_id": "REDACTED_RUN_d45dade5ed6a8c87",
       "stdout_summary": "Ran 2 tests in 354.702s\n\nOK",
       "assertion_evidence": [
         "Invalid-first test: Evil 4 first offer includes a forbidden extra field, then republishes its valid original packet during receipt circle.",
@@ -72,11 +72,11 @@
       "revision_scope": "Before final own-report hardening. This process imported the invalid test before missing-seat-8 coverage was added; that later version was independently tested below."
     },
     {
-      "command": "D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle -v",
       "exit_code": 0,
       "tests_run": 1,
       "elapsed_seconds": 131.045,
-      "tool_session_id": 60232,
+      "tool_session_id": "REDACTED_RUN_1d24a006a174829a",
       "stdout_summary": "Ran 1 test in 131.045s\n\nOK",
       "assertion_evidence": [
         "Latest invalid-first test simultaneously removes Evil 8 first offer attachment.",
@@ -87,7 +87,7 @@
       "revision_scope": "Latest invalid/missing test before final own-report helper hardening."
     },
     {
-      "command": "D:/python311/python.exe -m unittest tests.test_bot.BotTests.test_own_report_only_fills_unoccupied_current_leader_slot tests.test_bot.BotTests.test_attack_and_eligibility_boundaries tests.test_bot.BotTests.test_original_selection_and_both_recovery_branches -v",
+      "command": "LOCAL_PYTHON/python.exe -m unittest tests.test_bot.BotTests.test_own_report_only_fills_unoccupied_current_leader_slot tests.test_bot.BotTests.test_attack_and_eligibility_boundaries tests.test_bot.BotTests.test_original_selection_and_both_recovery_branches -v",
       "exit_code": 0,
       "tests_run": 3,
       "elapsed_seconds": 1.219,

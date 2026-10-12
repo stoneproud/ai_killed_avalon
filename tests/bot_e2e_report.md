@@ -4,7 +4,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
 
 ## Executed checks
 
-1. `D:/python311/python.exe -m unittest discover -s tests -p test_bot.py -v`
+1. `LOCAL_PYTHON/python.exe -m unittest discover -s tests -p test_bot.py -v`
 
    Result: 2 tests, 312.352s, exit 0 / OK.
 
@@ -15,7 +15,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
    - All task cards success; all first-offer-circle votes reject; public speech matches fixed broadcast.
    - Original p3/p2 branch unit assertions cover A_in_four, A_in_three, consensus and fallback.
 
-2. `D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_four_A_choice_recovery -v`
+2. `LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_four_A_choice_recovery -v`
 
    Result: 1 tests, 472.740s, exit 0 / OK.
 
@@ -27,7 +27,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
    - Only A=1 publishes quest-2 proposal-2 x_choice [1,2,3,6,7]; choice has exactly seven formal fields.
    - p2 four_source_agreement team equals actual proposed team. Final three successes, one failure, exactly two rejected teams total.
 
-3. `D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_five_unsplit_recovery -v`
+3. `LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_bad_three_report_five_unsplit_recovery -v`
 
    Result: 1 tests, 553.962s, exit 0 / OK.
 
@@ -39,7 +39,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
    - After the recovery-range failure, quest 3 team becomes [1,2,3,6]; subsequent quests pass on the recovered true range.
    - Final three successes, two failures; all eight source-preparation votes reject; exactly two rejected teams total.
 
-4. `D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle tests.test_bot_attacks.AttackAdapterTests.test_real_mail_A_in_four_complete_game -v`
+4. `LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle tests.test_bot_attacks.AttackAdapterTests.test_real_mail_A_in_four_complete_game -v`
 
    Result: 2 tests, 354.702s, exit 0 / OK.
 
@@ -50,7 +50,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
    - A_in_four test uses new RSA mail: truth [1,2,3,4,5], Evil 6/7/8 false lists [1,2,3,6,7], [1,4,5,6,7], [1,2,4,6,8].
    - Every completed receipt vote computes A_in_four and sole range [1,2,3,4,5]; final three successes, zero failures; no recovery files appear.
 
-5. `D:/python311/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle -v`
+5. `LOCAL_PYTHON/python.exe -m unittest tests.test_bot_attacks.AttackAdapterTests.test_invalid_first_offer_cannot_be_replaced_in_receipt_circle -v`
 
    Result: 1 tests, 131.045s, exit 0 / OK.
 
@@ -61,7 +61,7 @@ Exact commands and timings from completed tool stdout in this chat; assertions f
    - All receipt packets have exactly v/game/phase/seat/lists/four_choice; private verified records exclude invalid source 4.
    - Host reaches approved task team [1,2,3].
 
-6. `D:/python311/python.exe -m unittest tests.test_bot.BotTests.test_own_report_only_fills_unoccupied_current_leader_slot tests.test_bot.BotTests.test_attack_and_eligibility_boundaries tests.test_bot.BotTests.test_original_selection_and_both_recovery_branches -v`
+6. `LOCAL_PYTHON/python.exe -m unittest tests.test_bot.BotTests.test_own_report_only_fills_unoccupied_current_leader_slot tests.test_bot.BotTests.test_attack_and_eligibility_boundaries tests.test_bot.BotTests.test_original_selection_and_both_recovery_branches -v`
 
    Result: 3 tests, 1.219s, exit 0 / OK.
 
