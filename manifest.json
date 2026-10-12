@@ -29,8 +29,8 @@
     },
     {
       "path": ".github/ISSUE_TEMPLATE/challenge_report.md",
-      "bytes": 875,
-      "sha256": "2222bb101a8f58ab725b2fd5feef6e0949febbb552e92551038c83f2cf3f3912"
+      "bytes": 1572,
+      "sha256": "7e9088ebad34104eaf2eac47ceb4e02e5fde62776269c1b2ad68b7c1671296a4"
     },
     {
       "path": ".gitignore",
@@ -54,13 +54,18 @@
     },
     {
       "path": "PUBLICATION_CHECK.md",
-      "bytes": 1447,
-      "sha256": "b08791a2c70dc5dabf8daca7a6c55585e0483bf30a7282c16afb9e11ca6a0e9b"
+      "bytes": 2844,
+      "sha256": "c13f21ffafe2940f1eb4b3f669e9c6a990deb8b46620bd88fbf98ec6f6e14870"
     },
     {
       "path": "README.md",
-      "bytes": 10569,
-      "sha256": "341131b0e1dff648250f5d0015293e8803dd15dcfa8affaec6f3a04d7f454272"
+      "bytes": 14764,
+      "sha256": "ecec4e6459f1596c47d283374fba78c57d2ac748572a787d8915d61ab40c3839"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 11243,
+      "sha256": "52d56b0c8c08b7e3214167524b5470310d271eeeaa9bca0593b522b74d097a94"
     },
     {
       "path": "RESEARCH_COMPARISON.md",
@@ -81,6 +86,31 @@
       "path": "challenge.py",
       "bytes": 8274,
       "sha256": "109e593987a984c108a63b9d1077a8e81aba19a4f57a65d9f1482afda7952668"
+    },
+    {
+      "path": "docs/PROTOCOL_GUIDE.en.md",
+      "bytes": 11396,
+      "sha256": "662839a97855a25134b54baca873831f7a59d90eb95233bec97d3c0271e76e0b"
+    },
+    {
+      "path": "docs/SOURCE_MATERIAL.md",
+      "bytes": 2377,
+      "sha256": "a566eb5acbde7d514298a839c89e651f7401717ccf2c85b772d30eaefd2cdfcb"
+    },
+    {
+      "path": "docs/documentation_check.json",
+      "bytes": 4460,
+      "sha256": "6831838b7f8966f7bc18add0b6a8014012c15841618610a5bf4821f0f2839fe3"
+    },
+    {
+      "path": "docs/original_method.en.md",
+      "bytes": 9117,
+      "sha256": "8d2bd63bc1b84b42a8215d6e26b5e1ca464d94a86b02f1281c9389edddb1e680"
+    },
+    {
+      "path": "docs/original_method.zh-CN.md",
+      "bytes": 8284,
+      "sha256": "bc71a7bb2bd629be44bd98a9a48c13cb68cd8de48935d1620d6618dc411609ac"
     },
     {
       "path": "host.py",
@@ -253,5 +283,12 @@
       "sha256": "c026e7d5081003858421c653cfdd1c2b71c4f7dc5bbbd4490ea2637fa718f534"
     }
   ],
-  "caveat": "Historical export manifests are preserved under provenance. Current manifest excludes itself and SHA256SUMS.txt; SHA256SUMS.txt additionally hashes this manifest. Git identifies this publication commit."
+  "caveat": "Historical export manifests are preserved under provenance. Current manifest excludes itself and SHA256SUMS.txt; SHA256SUMS.txt additionally hashes this manifest. Git identifies this publication commit.",
+  "documentation_update": {
+    "date": "2026-10-12",
+    "base_commit": "826980dbbd14601f76e738cff91a3e04b7624ee6",
+    "default_language": "en",
+    "chinese_readme": "README.zh-CN.md",
+    "record": "docs/documentation_check.json"
+  }
 }

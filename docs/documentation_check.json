@@ -1,0 +1,178 @@
+{
+  "checked_at": "2026-10-12T15:06:23.473082+00:00",
+  "base_commit": "826980dbbd14601f76e738cff91a3e04b7624ee6",
+  "language_layout": "English README.md + Chinese README.zh-CN.md, reciprocal links",
+  "local_links_checked": 40,
+  "local_links": "pass",
+  "shared_shell_commands": 17,
+  "README_command_parity": "pass",
+  "original_input_sha256": "bc71a7bb2bd629be44bd98a9a48c13cb68cd8de48935d1620d6618dc411609ac",
+  "original_input_bytes": 8284,
+  "protected_code_test_vendor_files_unchanged": 35,
+  "translation_scope": "Complete original-input translation; separate non-normative guide to the frozen two-circuit implementation",
+  "new_game_or_model_calls": false,
+  "execution_tests_rerun": false,
+  "limitations": "Documentation checks, not a fresh gameplay run, independent translation certification, or cryptographic proof.",
+  "links": [
+    {
+      "document": "README.md",
+      "target": "README.zh-CN.md"
+    },
+    {
+      "document": "README.md",
+      "target": "CREDITS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/PROTOCOL_GUIDE.en.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/original_method.en.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/original_method.zh-CN.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/SOURCE_MATERIAL.md"
+    },
+    {
+      "document": "README.md",
+      "target": "#quick-start"
+    },
+    {
+      "document": "README.md",
+      "target": "#run-the-baseline-then-take-over"
+    },
+    {
+      "document": "README.md",
+      "target": "#seat-isolation-and-manual-play"
+    },
+    {
+      "document": "README.md",
+      "target": "#bring-your-own-ai"
+    },
+    {
+      "document": "README.md",
+      "target": "HOST_README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "vendor/provenance.json"
+    },
+    {
+      "document": "README.md",
+      "target": "HOST_README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "HOST_README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/PROTOCOL_GUIDE.en.md"
+    },
+    {
+      "document": "README.md",
+      "target": "VALIDATION.md"
+    },
+    {
+      "document": "README.md",
+      "target": "PUBLICATION_CHECK.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "README.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "HOST_README.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "docs/PROTOCOL_GUIDE.en.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "CREDITS.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "docs/original_method.zh-CN.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "docs/original_method.en.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "docs/SOURCE_MATERIAL.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "vendor/artifacts/p4_protocol_v1.md"
+    },
+    {
+      "document": "README.zh-CN.md",
+      "target": "HOST_README.md"
+    },
+    {
+      "document": "docs/SOURCE_MATERIAL.md",
+      "target": "original_method.zh-CN.md"
+    },
+    {
+      "document": "docs/SOURCE_MATERIAL.md",
+      "target": "original_method.en.md"
+    },
+    {
+      "document": "docs/SOURCE_MATERIAL.md",
+      "target": "../vendor/artifacts/p4_protocol_v1.md"
+    },
+    {
+      "document": "docs/SOURCE_MATERIAL.md",
+      "target": "PROTOCOL_GUIDE.en.md"
+    },
+    {
+      "document": "docs/SOURCE_MATERIAL.md",
+      "target": "../CREDITS.md"
+    },
+    {
+      "document": "docs/original_method.en.md",
+      "target": "original_method.zh-CN.md"
+    },
+    {
+      "document": "docs/original_method.en.md",
+      "target": "SOURCE_MATERIAL.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../README.zh-CN.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../vendor/artifacts/p4_protocol_v1.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../HOST_README.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "original_method.en.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "docs/PROTOCOL_GUIDE.en.md",
+      "target": "../HOST_README.md"
+    }
+  ]
+}

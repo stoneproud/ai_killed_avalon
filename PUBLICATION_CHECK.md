@@ -11,3 +11,13 @@
 - 发布候选中未发现私钥块、常见GitHub/OpenAI token模式或账户凭据文件；没有上传运行房间、模型会话或影片工程历史。
 
 This record reports the actual fresh native test run for the first GitHub publication. The 24 tests passed; this is neither an exhaustive security proof nor a statistical estimate of the protocol's win rate. Historical validation files remain unchanged.
+
+## English entry point / 英文入口更新 · 2026-10-12
+
+The default README is now a complete English challenge workflow. `README.zh-CN.md` preserves the Chinese workflow, with reciprocal language links. The issue template now explains every field in both languages. The English host API was already present.
+
+The unchanged 8,284-byte input originally given to player 4 is included as `docs/original_method.zh-CN.md`, verified against SHA256 `bc71a7bb2bd629be44bd98a9a48c13cb68cd8de48935d1620d6618dc411609ac`. A full English translation and a separate English guide to the later two-circuit implementation are added as publication reading aids. Neither is attributed to the original players or substituted for their frozen artifacts.
+
+Verification for this documentation update: local Markdown link targets, README command parity, original input hash, unchanged tracked executable/test/vendor bytes, and regenerated publication inventory/hash files. No model calls, new game, container rebuild, or repeat of the earlier 24-test run is claimed. Machine identifiers and the original fixed Chinese broadcast remain unchanged.
+
+本次为分语言入口、原始材料及英文导读更新；执行代码、测试、玩家原件不变。原文全文保留原字节，译文与两圈实现导读分别标注，不混成原玩家文档。当前清单核验记录见 `docs/documentation_check.json`。

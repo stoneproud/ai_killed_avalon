@@ -1,57 +1,66 @@
-# AI杀死了阿瓦隆？ / AI Killed Avalon?
+# AI Killed Avalon? / AI杀死了阿瓦隆？
 
-**协议、代码、桌子都给你。不服？你来试试。**
+**English** | [简体中文](README.zh-CN.md)
 
-*The protocol. The code. The table. Your move.*
+**The protocol. The code. The table. Your move.**
 
-AI导演 **Codex** × 策划与制作 **stoneproud** · [署名与来源 / Credits](CREDITS.md)
+AI Director **Codex** × Concept and production **stoneproud** · [Credits and sources](CREDITS.md)
 
-这是影片《AI杀死了阿瓦隆》的密封信协议挑战环境。八个座位已经共同采用 `sealed-mail-2r-v1`，下一局身份还没发。你可以接手一个座位、指挥自己的AI，或者检查原程序，找出能改变结果的攻击。
+This is the sealed-mail protocol challenge environment from the film *AI Killed Avalon?* Start with eight seats that have agreed to use `sealed-mail-2r-v1`, **before any roles are dealt**. Take a seat yourself, bring your own AI, or inspect the original programs and find an attack that changes the result.
 
-**挑战的是条件，不是要求你相信结论。** 三次任务能够完成、梅林没有留下额外可用线索、刺客在五名好人中均匀盲选时，梅林躲过最后一刀的概率才是4/5。我们没有证明整个游戏等价于一个随机数，也没有以影片中的几局估计80%胜率。让协议不能保证任务，或从可见材料更好地辨认梅林，都是值得提交的反例。
+Can you break the quest guarantee through legal play? Can Evil use the available information to identify Merlin better than a uniform blind guess? Bring a reproducible counterexample.
 
-This is a fresh, already-adopted, **undealt** eight-seat scenario. Bring a human or an AI to attack the protocol. The 80% figure is conditional survival of a uniform blind assassination among five Good players, not an empirically established whole-game win rate or a proved anonymity theorem.
+The **80%** figure is conditional: if Good completes three quests, Merlin leaves no additional usable clues, and the Assassin guesses uniformly among the five Good players, Merlin survives with probability 4/5. We have not established an empirical 80% whole-game win rate, proved the implementation anonymous, or proved that the entire game reduces to a random number.
 
-## 起点包含什么
+## Choose your route
 
-- 玩家原协议及10个原始工具在 `vendor/`，字节哈希见 `vendor/provenance.json`。这些原件没有被改写成主持人心目中的理想算法。
-- `init`为八人生成全新RSA-3072 PEM钥匙、独立私人目录、公开Git历史及新公钥登记。身份仅在你另行执行 `deal` 时生成；不会带入原视频后续的牌。
-- 原来的“八人共同采用”在这里是明确的挑战初始条件。这里没有伪造第一局、采用对话或原模型记忆，也不复制原会话账户。
-- 公共附件由主持归因到提交座位并形成真实Git提交；每个行动读取固定40位快照。私有票收齐前不向其他座位公布。
-- 人工、AI和配套协议执行器使用同一个请求/回复接口。模型调用不包含在包内，初始化和验证不需要API钥匙。
+| What you want to do | Start here |
+|---|---|
+| Understand the strategy | [English protocol guide](docs/PROTOCOL_GUIDE.en.md) |
+| Read what player 4 was actually given | [English translation](docs/original_method.en.md) · [unchanged Chinese original](docs/original_method.zh-CN.md) · [source and hash](docs/SOURCE_MATERIAL.md) |
+| Run a fresh room | [Quick start](#quick-start) |
+| Run the baseline, then intervene | [Baseline and attacks](#run-the-baseline-then-take-over) |
+| Connect your own AI or play manually | [Seat isolation](#seat-isolation-and-manual-play) · [AI integration](#bring-your-own-ai) |
+| Implement a different player | [English host API and action schemas](HOST_README.md) |
+| Report a finding | [Challenge report](https://github.com/stoneproud/ai_killed_avalon/issues/new?template=challenge_report.md) |
 
-## 快速开始
+The original method document and the players' later two-circuit protocol are **different artifacts**. The players' frozen Chinese protocol and ten original tools remain unchanged in `vendor/`. The English guide and translation are reading aids added for this publication, not text the players received or authored.
 
-需要Python 3.11+、Git、Perl、OpenSSL、OpenSSH客户端。Windows可安装Python与Git for Windows；`doctor`会使用Git随附的Perl/OpenSSL/ssh-keygen。也支持Linux/macOS原生工具。
+## What the starting position contains
 
-先取得环境：
+- The actual player-authored protocol and ten original tools, with byte hashes in [`vendor/provenance.json`](vendor/provenance.json). They have not been rewritten into an idealized algorithm.
+- `init` creates fresh RSA-3072 PEM keys, separate private seat directories, public Git history, and a new public-key registration. Only `deal` assigns roles. The film's later role assignments are not imported.
+- Agreement to use the protocol is an explicit **scenario assumption**. This package does not fabricate a previous game or adoption conversation, restore the original models' memories, or copy their accounts.
+- The host attributes public attachments to the submitting seat and records real Git commits. Each action reads a fixed 40-character snapshot. Partial private votes are not disclosed to other seats.
+- Humans, AIs, and the included protocol adapter use the same request/reply interface. No model service is bundled, and initialization and validation require no model API key.
+
+## Quick start
+
+Install **Python 3.11+, Git, Perl, OpenSSL, and the OpenSSH client**. On Windows, install Python and Git for Windows; `doctor` can locate the Perl, OpenSSL, and `ssh-keygen` bundled with Git. Native Linux/macOS tools are also supported. The default isolated player runner additionally needs Podman or Docker and a built seat image; see the next section.
 
 ```sh
 git clone https://github.com/stoneproud/ai_killed_avalon.git
 cd ai_killed_avalon
-```
-
-在本目录执行（Windows可将 `python` 换成 `py -3`）：
-
-```sh
 python challenge.py --root ./runs/my-table doctor
 python challenge.py --root ./runs/my-table init
 python challenge.py --root ./runs/my-table status
 ```
 
-此时应显示 `phase: predeal`，没有身份、任务、信件或模型调用。**这就是要分享给挑战者的起点**：上传本包源码，每个使用者自行初始化；不要上传你的 `runs/`。
+On Windows, replace `python` with `py -3` if needed. Use a new, nonexistent room directory for `init`.
 
-准备好开局后：
+The expected phase is `predeal`: no roles, quests, envelopes, or model calls yet. This is the challenge starting position. Share this source repository; each challenger initializes their own room. **Do not upload `runs/`.**
+
+When ready:
 
 ```sh
 python challenge.py --root ./runs/my-table deal
 ```
 
-再执行一次deal会被拒绝。中断后使用同一目录继续，不必重发牌。
+A second `deal` is rejected. Continue in the same room after an interruption; do not redeal to resume it. Internal game IDs begin with `g2` for compatibility with the original tool paths, even though this is your first fresh room.
 
-## 隔离运行与人工接管
+## Seat isolation and manual play
 
-使用Podman或Docker构建座位镜像（下例使用Podman）：
+Build the player image with Podman or Docker. The examples use Podman:
 
 ```sh
 podman build -t sealed-mail-challenge:local -f Containerfile .
@@ -59,7 +68,32 @@ python challenge.py --root ./runs/my-table export --seat 4
 python challenge.py --root ./runs/my-table shell --seat 4
 ```
 
-若Windows能通过既有系统代理访问Docker Hub，而Podman VM直连拉取超时，可由可信构建端下载官方Python基础镜像为OCI档案，校验清单内的每个SHA-256后导入，再离线使用这个基础镜像构建。这里的联网只发生在构建端，不改变玩家的 `--network=none`：
+Inside a seat container:
+
+- `/workspace` holds that seat's keys, private decrypted results, and working files.
+- `/input/request.json` is that seat's current request.
+- `/input/public_repo` is a read-only repository of already-published Git objects.
+
+The container has no host-wide deal, other seat directories, host account, or model-provider credentials. Its network is disabled. The trusted operator collects its reply after the player process exits.
+
+For a quick look at published information:
+
+```sh
+git -C /input/public_repo show HEAD:public/bulletin.json
+```
+
+For an actual decision, use the exact `seen_snapshot` from the request, not a later `HEAD`. The [host API](HOST_README.md) specifies the JSON reply for every stage. Write `reply.json` in `/workspace`, exit the seat container, and have the trusted operator submit it:
+
+```sh
+python challenge.py --root ./runs/my-table submit --seat 4 --file ./runs/my-table/players/p4/reply.json
+```
+
+`--seat` is a trusted-operator routing argument, **not remote authentication**. Do not give a challenger the full run directory, host CLI, or container-management interface. Mount only their seat. Do not execute untrusted player code on the host. A public multiplayer service would need its own authentication and concurrency-safe submission layer; this repository supplies an operator CLI, not that deployed service.
+
+<details>
+<summary>Windows: image pull times out inside the Podman VM</summary>
+
+If the Windows host can reach Docker Hub through its configured proxy but the VM cannot, a trusted build machine can download the official Python image as an OCI archive, verify its SHA-256 content, and import it:
 
 ```sh
 python tests/acquire_python_base.py --output ./work/python-base
@@ -67,81 +101,93 @@ podman load -i ./work/python-base/python-base.oci.tar
 podman build --pull=never --http-proxy=false -t sealed-mail-challenge:local -f Containerfile .
 ```
 
-辅助下载器使用Python已有的代理配置，不打印代理凭证；输出目录必须不存在。基础镜像仍为官方 `python:3.11-slim-bookworm`，原Containerfile所需Debian软件包的安装仍须构建期网络。没有把包含旧会话的镜像充作基底。
+The output directory must not already exist. The helper uses Python's existing proxy configuration without printing proxy credentials. The base is the official `python:3.11-slim-bookworm`; installing Debian packages during the Containerfile build still requires build-time network access. This does not enable player networking or reuse an image containing old model sessions.
 
-座位容器中 `/workspace` 是自己的钥匙、私密解密结果和工作目录；`/input/request.json`是本座请求，`/input/public_repo`是只读的已公布Git对象。这里没有主持全牌、其他座位目录、宿主账户或模型提供商凭证；网络关闭。容器退出后由可信操作员收取回复。
+</details>
 
-公开信息可这样读：
+## Run the baseline, then take over
 
-```sh
-git -C /input/public_repo show HEAD:public/bulletin.json
-```
+`bot.py` is a deterministic adapter written for this challenge. It invokes the original Perl tools; it is not a model from the film or a smarter replacement strategy. Structure validation, first-packet selection, signatures, decryption, and team selection remain distinct checks. A valid packet does not make its claimed Good list true.
 
-计算具体行动时使用请求里的 `seen_snapshot`，不要悄悄切到后来的HEAD。写出 `reply.json`后退出座位容器，再由操作员提交：
-
-```sh
-python challenge.py --root ./runs/my-table submit --seat 4 --file ./runs/my-table/players/p4/reply.json
-```
-
-`--seat`是可信操作员路由参数，**不是远程用户认证**。不要把整个运行目录、主持CLI或容器管理接口交给挑战者。容器只挂该座位；不要在宿主执行不可信玩家代码。若要联网提供房间，需要另外实现认证和并发安全的收件服务，本包没有冒充这一部署已经完成。
-
-## 自动运行基线，再停下来攻击
-
-`bot.py`是新写的确定性适配层，调用原始Perl工具执行协议；它不是影片中的模型，也不是一套更聪明的替代策略。原工具的结构检查、首包固定、签名、解密及选队检查各自独立，不把“格式正确”当成“名单真实”。
+After dealing roles and building the image:
 
 ```sh
 python play.py --root ./runs/my-table --until g2_q1_vote2
 ```
 
-它在第二圈完成、投票开始前停下，方便检查收信/收讫状态或接管。去掉 `--until` 则继续逐行动运行。每次都保存真实状态；出现无效前提或不支持的输入时，自动助手停止生成行动并交还人工，不代玩家补一份答案。这不表示游戏规则要求停局：可信操作员仍可用 `shell` / `export` 让该座位按普通阿瓦隆规则判断，再用 `submit` 继续同一房间；不要因此重发牌或公开尚未失败名单的私密来源。
+This stops after the second speech circuit, before voting begins, so you can inspect receipt state or take over a seat. Omit `--until` to continue action by action. Each invocation saves actual progress.
 
-仅运行本包自带的可信基线时，可加 `--native-trusted` 省去容器启动。**不要用这个选项运行攻击者代码**。运行中的玩家进程应先退出再收取回复，避免它在宿主检查路径之后替换文件。
+When premises are invalid or input is unsupported, the adapter stops producing actions and returns control to the operator. This is **not** a rule requiring the game to end: export the request or open the seat's shell, let that player decide under the normal host rules, then `submit` to continue. Do not redeal or reveal private sources for lists that have not actually failed a quest just to debug the protocol.
 
-坏人基线默认发 `none` 信、按公共协议队伍表决、任务出 `success`。要测试明确攻击，在自己的座位工作区放 `attack.json`；只由坏人适配器读取，例如：
+For the bundled, trusted baseline only, `--native-trusted` skips container startup. **Never use it for attacker code.** Ensure the player process has exited before collecting its files, so it cannot replace a file after the host checks its path.
+
+### Configure an Evil baseline attack
+
+By default the Evil baseline sends `none`, votes for the public protocol team, and plays `success` on quests. That default is a baseline, not a claim that Evil must cooperate.
+
+To test a specified attack, place `attack.json` in your Evil seat's workspace **before the action you want to change**. Only the Evil adapter reads it. Example:
 
 ```json
 {"false_list":[4,5,6,7,8],"fail_quests":[1,2],"x_source":5}
 ```
 
-`false_list` 必须是升序五个不同座位且包含发送者；它用本座真实登记钥匙生成密封包。`fail:true` 表示所有任务出 Fail，`fail_quests:[1,2]` 只在列出的任务出 Fail。`x_source` 仅在实际失败X的来源恢复首圈覆盖本座来源声明，须为 `null` 或X内座位，而且报告者自己也须在X内；它不会披露其他名单来源。省略字段保持基线行为。也可直接调用 `bot.py --false-list 4,5,6,7,8 --fail`；显式CLI攻击参数取代 `attack.json` 配置，好人显式传入攻击参数会报错。自己编写其他合规坏人行为仍使用同一请求/回复接口。
+| Field | Meaning |
+|---|---|
+| `false_list` | Five distinct, ascending seat numbers including the sender. Uses that seat's real registered key to create the sealed packet. The example is not valid for a sender outside seats 4–8. |
+| `fail: true` | Play Fail on every quest in which that Evil seat participates. |
+| `fail_quests: [1,2]` | Play Fail only on the listed quests. |
+| `x_source` | Override this seat's source claim in the first recovery circuit for an actually failed X. It must be `null` or a seat inside X, and the reporting seat must also be in X. It does not reveal other lists' sources. |
 
-## 如何指挥你的AI
+Omitted fields retain baseline behavior. `bot.py` also accepts `--false-list 4,5,6,7,8 --fail`; explicit CLI attack options replace `attack.json`. Passing explicit attack options for a Good seat is rejected. Other legal Evil strategies can be implemented through the same request/reply API; you are not restricted to these predefined options.
 
-1. 操作员为指定座位导出请求。
-2. 只把该座位的请求、协议和已公布材料交给模型。模型账号留在你的调用端，别挂进玩家工作区。
-3. 让模型通过本座沙箱处理信件、写公开附件或选行动；它也可以完全不遵守密封信策略，但必须遵守主持规则。
-4. 收取最终JSON回复并提交。不要上传模型内部推理，也不要把主持的全牌文件当作玩家输入。
+## Bring your own AI
 
-完整JSON格式、每个阶段的行动、拒队/任务/刺杀规则见 [HOST_README.md](HOST_README.md)。容器内没有预置某家模型CLI；你可以使用自己的调用端或人工操作，采用同一视野边界。
+1. The trusted operator exports the request for the intended seat.
+2. Give the model only that seat's request, the protocol, and published material. Keep model-account credentials in your calling service, outside player workspaces.
+3. Let the model use its seat sandbox to process letters, create public attachments, or choose actions. It may deviate from the sealed-mail strategy but must obey the host's game rules. Record any departure from the protocol's stated Good-player assumptions when reporting a result.
+4. Collect the final JSON reply and submit it. Do not upload model hidden reasoning or provide the host's full role assignment as player input.
 
-## 复现与原实验的边界
+The full JSON format and stage-by-stage actions are documented in English in [HOST_README.md](HOST_README.md). No vendor-specific model CLI is preinstalled in the player container. Use your own client or play manually with the same visibility boundary.
 
-这个包复现的是**共同采用协议后的玩法条件与代码**。旧实验使用玩家通过SSH提交Git分支；本包由可信操作员认证/路由座位、主持生成来源提交，再导出已公开的main对象。它没有模拟一台已完成远程认证的SSH游戏服务器。原公钥的历史哈希保留在原件中，新房间以 `public/challenge_registration.json` 绑定新钥匙；原钥匙私有部分不会分发。
+The protocol's fixed public broadcast is Chinese. **Keep its bytes unchanged for protocol-faithful runs**; the [English guide](docs/PROTOCOL_GUIDE.en.md) explains what it means. JSON keys, phase IDs, and file paths are machine interfaces, not strings to translate.
 
-同样，容器里的Python适配层是本包新加入的自动执行工具，不是原实验玩家获得过的工具。手动玩家仍可直接使用冻结的Perl/OpenSSL程序。工具环境的扩展与模型本身的能力要分开报告。
+## What is reproduced, and what differs
 
-八人包含梅林、派西维尔、三忠臣、莫甘娜、刺客、爪牙，没有莫德雷德。车头只选顺/逆时针，固定发言圈；五拒队坏人赢，第四任务需两张失败票。三成功后按原主持流程让三名坏人公开说一圈，再由刺客私密提交目标。此时坏人参与集合可见，不等于公开五名好人中的梅林。
+This package reproduces the **post-adoption conditions and original protocol code**. In the experiment, players submitted Git branches over SSH. Here, a trusted operator authenticates/routes seats, the host creates attributed source commits, and the adapter exports published `main` objects. It does not pretend to be a deployed, remotely authenticated SSH game server.
 
-## 测试与提交攻击
+Historical public-key hashes remain in the original artifacts. Each new room binds fresh keys through `public/challenge_registration.json`; the original private keys are not distributed. The Python adapter is new tooling for this reproduction, not something the original players received. Manual players can use the frozen Perl/OpenSSL programs directly. Report tooling changes separately from claims about model capability.
+
+### Rules of this table
+
+- Eight players: Merlin, Percival, three Loyal Servants, Morgana, Assassin, and Minion. No Mordred or Lady of the Lake.
+- The leader chooses clockwise or counterclockwise speech order; speech circuits are fixed.
+- Quest team sizes are **3 / 4 / 4 / 5 / 5**. A team needs at least five approvals. Five consecutive rejections give Evil the win.
+- The fourth quest requires two Fail cards; the others require one. Good must submit Success. A quest result reveals only the Fail total.
+- Three failed quests give Evil the win. Three successful quests lead to one public speech circuit by the three Evil players, then the Assassin privately chooses a target. A hit wins for Evil; a miss wins for Good.
+- That final public Evil circuit is part of this host's reproduced procedure. It exposes the participating Evil seat set, not Merlin's identity among the five Good players. It is not an added private chat.
+
+## Tests and challenge reports
 
 ```sh
 python -m unittest discover -s tests -v
 ```
 
-测试只创建新临时房间，不调用模型。交付测试范围和限制见配套验证报告；单元测试通过不是协议形式化证明。
+Tests create new temporary rooms and make no model calls. See [VALIDATION.md](VALIDATION.md) and [PUBLICATION_CHECK.md](PUBLICATION_CHECK.md) for recorded scope and limitations. Passing tests is not a formal proof of the protocol.
 
-镜像构建后可明确执行真实容器和CLI检查（新输出目录，保留原始日志与新测试房间，包含私人钥匙，勿上传整个目录）：
+After building the image, an explicit container/CLI check is available:
 
 ```sh
 python tests/validate_container_cli.py --output ./work/container-check
 ```
 
-它检查同一座位启动策略下的只读input、自己workspace、无宿主/其他座位目录、无外连、零有效能力及代码哈希，再通过 `play.py` 的默认容器路径跑完一局。缺少可运行的镜像或引擎会报错，不会悄悄切成原生验证。
+Use a new output directory. It preserves logs and test rooms, **including private keys**, so do not upload it wholesale. It checks read-only input, the seat's own workspace, absence of other seats/host directories and external networking, zero effective capabilities, and code hashes; it then runs a game through `play.py`'s default container path. Missing images or engines cause an error, not a silent native fallback.
 
-请提交：包版本、采用前提、你控制的座位/可见信息、首次产生差异的公开事件、最小复现步骤和结果。区分三类发现：
+Submit the repository commit, environment and assumptions, controlled seats and visible information, the first divergent public event and Git snapshot, minimal reproduction steps, and observed results. Distinguish:
 
-1. 协议策略反例：合规坏人行为让任务保障或身份隐藏失效。
-2. 实现缺陷：原工具或新适配层处理了不该接受/拒绝的数据。
-3. 环境越权：拿到了其他座位/主持不应交出的信息。修这个环境缺陷不能被称为在正常阿瓦隆规则内获胜。
+1. **Strategy counterexample:** legal adversarial play defeats quest guarantees or identity concealment under the stated assumptions.
+2. **Implementation defect:** an original tool or the new adapter accepts or rejects data incorrectly.
+3. **Environment isolation failure:** a seat gains information it should never have received. Fixing that defect is different from winning under the intended visibility rules.
 
-不要提交账户、私钥、全部运行目录或隐藏推理。公开附件和最小合成fixture通常更有用。请在[挑战报告 / Issues](https://github.com/stoneproud/ai_killed_avalon/issues/new?template=challenge_report.md)提交可复现的攻击。
+Report quest results, assassination outcomes, and information exposure separately. Attach public packets or minimal synthetic fixtures, not accounts, private keys, whole run directories, or hidden reasoning.
+
+**[Submit a challenge](https://github.com/stoneproud/ai_killed_avalon/issues/new?template=challenge_report.md). Show the first place our expectations stop matching your game.**
