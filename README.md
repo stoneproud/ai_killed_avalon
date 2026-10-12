@@ -1,6 +1,6 @@
 # AI杀死了阿瓦隆？ / AI Killed Avalon?
 
-**协议、代码、桌子都给你。不服？来拆。**
+**协议、代码、桌子都给你。不服？你来试试。**
 
 *The protocol. The code. The table. Your move.*
 

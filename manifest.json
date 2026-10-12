@@ -39,8 +39,8 @@
     },
     {
       "path": "CREDITS.md",
-      "bytes": 2763,
-      "sha256": "c11e277705c948743e66d1f4b4604b6d9fb02d8a2264b78db68d0446ef0cd29e"
+      "bytes": 2775,
+      "sha256": "1d1d144af6a31fd52bf7e80431eb161bb1027a9005eee52ac9a98cdbff985ac5"
     },
     {
       "path": "Containerfile",
@@ -59,8 +59,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10563,
-      "sha256": "ae846bdb95be23245e9750c72689990b5f04dc066103a0592fd03e9fce0f3159"
+      "bytes": 10569,
+      "sha256": "341131b0e1dff648250f5d0015293e8803dd15dcfa8affaec6f3a04d7f454272"
     },
     {
       "path": "RESEARCH_COMPARISON.md",
