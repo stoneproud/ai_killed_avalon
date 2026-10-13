@@ -18,6 +18,12 @@ AI导演 **Codex** × 策划与制作 **stoneproud** · [署名与来源 / Credi
 
 This is a fresh, already-adopted, **undealt** eight-seat scenario. Bring a human or an AI to attack the protocol. The 80% figure is conditional survival of a uniform blind assassination among five Good players, not an empirically established whole-game win rate or a proved anonymity theorem.
 
+## 影片原始材料与字幕
+
+[下载影片配套 Release](https://github.com/stoneproud/ai_killed_avalon/releases/tag/film-materials-2026-10-14) · [材料内容与版本说明](docs/FILM_MATERIALS.md) · [影片参考资料](docs/FILM_REFERENCES.md)
+
+`avalon-evidence-and-subtitles.zip` 包含给4号的完整原文、三局实际行动与最终提交、公开附件、采访问题和回答、章节、字幕及参考资料，**不含视频文件**。原文同时放在仓库和附件中，方便离线阅读，字节完全一致。可运行的挑战环境与代码仍从本仓库取得。
+
 ## 起点包含什么
 
 当时交给4号的完整材料在[密封信玩法原文](docs/original_method.zh-CN.md)，[英文翻译](docs/original_method.en.md)供英文读者阅读；复制来源与哈希见[材料说明](docs/SOURCE_MATERIAL.md)。它与玩家后来实现的[两圈冻结协议](vendor/artifacts/p4_protocol_v1.md)是不同文件，原文未包含后来那十份程序。英文导读是本次发布补充的阅读说明，不冒充玩家原件。

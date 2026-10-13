@@ -59,18 +59,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 14862,
-      "sha256": "38da2fbd8a85da9b64713f32737524d7c0fb3e14eb7ee9cff3d6b9ab93475a7e"
+      "bytes": 15561,
+      "sha256": "283967c064e024bea5ed699232296a4f44cf9b012fcfd98d45d15dd7f5c7fb01"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 11405,
-      "sha256": "1ee4ea95744b457d6f6b0f4f4dc82b634dc0e95090e5435fd12b9be9580418dd"
+      "bytes": 12000,
+      "sha256": "5c51c1cbd33caae39bb4d7b471e5cd9d5c35d21c97de8691ac7191ceb00a3483"
     },
     {
       "path": "RESEARCH_COMPARISON.md",
-      "bytes": 3066,
-      "sha256": "9b053708a2c1c7edee6f5d0b72cb13486bdd3475fcb02ac7c510acbb9f1769cc"
+      "bytes": 3224,
+      "sha256": "eb95e1f22f2a5e2e8cdbc45655f611e18d101ae312073ca201c2431a234fc02d"
     },
     {
       "path": "VALIDATION.md",
@@ -88,9 +88,19 @@
       "sha256": "109e593987a984c108a63b9d1077a8e81aba19a4f57a65d9f1482afda7952668"
     },
     {
+      "path": "docs/FILM_MATERIALS.md",
+      "bytes": 2913,
+      "sha256": "4fb3e10a63ac0de7b3486fe21e62d3919923fed4d67a4325d3e08872b8cd5574"
+    },
+    {
+      "path": "docs/FILM_REFERENCES.md",
+      "bytes": 4551,
+      "sha256": "785403d6c899035d51fa544ed1dc11c35278f66ca6507ef0f07ae62734b7a08e"
+    },
+    {
       "path": "docs/PRIVACY_REVIEW.md",
-      "bytes": 3202,
-      "sha256": "486ce804536dd7371ec5ac38f28b7b9741da96d17ed469299d9b536d5684db02"
+      "bytes": 3364,
+      "sha256": "5c2c36de56248fcf3a4dcf35e5c49933d759eabecd69dd2df91757ec59592029"
     },
     {
       "path": "docs/PROTOCOL_GUIDE.en.md",
@@ -305,5 +315,15 @@
     "date": "2026-10-12",
     "report": "docs/PRIVACY_REVIEW.md",
     "file_changes": "docs/privacy_redactions.json"
+  },
+  "film_materials_release": {
+    "date": "2026-10-14",
+    "tag": "film-materials-2026-10-14",
+    "guide": "docs/FILM_MATERIALS.md",
+    "references": "docs/FILM_REFERENCES.md",
+    "asset": "avalon-evidence-and-subtitles.zip",
+    "asset_sha256": "f8a59cac3483080fa0728ebbda96f0608940b488bf23807ff08887122e4ae7ee",
+    "video_files": 0,
+    "code_and_vendor_unchanged": true
   }
 }

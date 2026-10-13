@@ -1,6 +1,6 @@
 # Public-material privacy review / 公开材料脱敏检查
 
-Review date: **2026-10-12**. Scope: the published repository's files and reachable Git history, plus a separate review of the film's audience bundle. This page records the repository changes; the final film bundle includes its own per-file table.
+Review date: **2026-10-12**. Scope: the published repository's files and reachable Git history, plus a separate review of the film's audience bundle. This page records the repository changes. The audience download contains sanitized source material; per-file production redaction logs are retained locally, outside the Release asset. See [film materials](FILM_MATERIALS.md) for the current download contents.
 
 | Material / 材料 | Finding / 发现 | Action / 处理 |
 |---|---|---|

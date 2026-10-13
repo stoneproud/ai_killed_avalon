@@ -12,6 +12,12 @@ Can you break the quest guarantee through legal play? Can Evil use the available
 
 The **80%** figure is conditional: if Good completes three quests, Merlin leaves no additional usable clues, and the Assassin guesses uniformly among the five Good players, Merlin survives with probability 4/5. We have not established an empirical 80% whole-game win rate, proved the implementation anonymous, or proved that the entire game reduces to a random number.
 
+## Film evidence and subtitles
+
+[Download the film materials Release](https://github.com/stoneproud/ai_killed_avalon/releases/tag/film-materials-2026-10-14) · [Package contents and version](docs/FILM_MATERIALS.md) · [Film references](docs/FILM_REFERENCES.md)
+
+`avalon-evidence-and-subtitles.zip` contains the complete original document given to player 4, recorded game events and final submissions, public attachments, interview questions and answers, chapters, subtitles, and references. **Video files are not included.** The Chinese original is intentionally included both here and in the archive for offline reading; its bytes are identical. The executable challenge stays in this repository.
+
 ## Choose your route
 
 | What you want to do | Start here |
